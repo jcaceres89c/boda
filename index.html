@@ -16,7 +16,6 @@
       position: relative;
     }
 
-    /* Cover Page */
     #cover {
       position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
       background: url('https://images.unsplash.com/photo-1510251727245-ca52a5f2d19e?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
@@ -26,7 +25,7 @@
     }
 
     .name-box {
-      background-color: #e6d1b3;
+      background-color: #bc785a;
       padding: 2rem 3rem;
       border-radius: 16px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -42,21 +41,22 @@
     .names .name {
       font-family: 'Great Vibes', cursive;
       font-size: 6vw;
-      color: #5e4637;
+      color: white;
     }
 
     .names .ampersand {
       font-size: 4vw;
       font-weight: bold;
       margin: 0.5rem 0;
-      color: #5e4637;
+      color: white;
     }
 
     .floral-top-right, .floral-bottom-left {
       position: absolute;
       width: 120px;
-      height: auto;
-      background: url('https://i.imgur.com/6YwKZ0b.png') no-repeat center center;
+      height: 120px;
+      background-image: url('https://i.imgur.com/fnZpFsJ.png'); /* imagen nueva funcional */
+      background-repeat: no-repeat;
       background-size: contain;
       z-index: 1;
     }
@@ -72,7 +72,9 @@
     }
 
     #cover .invite-text {
-      margin-top: 2rem; font-size: 1rem; color: #5e4637;
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #5e4637;
     }
 
     #cover .invite-text p {
@@ -80,43 +82,110 @@
     }
 
     #cover .invite-text .highlight {
-      font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     #cover .envelope-container {
-      margin-top: 2rem; position: relative;
-      width: 180px; height: 180px;
+      margin-top: 2rem;
+      position: relative;
+      width: 220px;
+      height: 220px;
       cursor: pointer;
       z-index: 6;
     }
 
     #cover .envelope-container img {
-      width: 100%; height: 100%; object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     #cover .envelope-container .seal {
-      position: absolute; top: 65px; left: 65px; width: 50px; height: 50px;
+      position: absolute;
+      top: 85px;
+      left: 85px;
+      width: 50px;
+      height: 50px;
       background: url('https://image.flaticon.com/icons/png/512/2913/2913461.png') no-repeat center center;
-      background-size: contain; animation: pulse 2s infinite;
+      background-size: contain;
+      animation: pulse 2s infinite;
     }
 
-    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
 
-    /* Slideshow */
-    .viewport { display: none; position: relative; width: 100%; height: 100vh; overflow: hidden; z-index: 2; }
-    .slides { width: 100%; height: 300vh; animation: slideAnimation 15s infinite; }
-    .section { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100vh; padding: 2rem; text-align: center; background: rgba(255,245,240,0.9); }
+    .viewport {
+      display: none;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 2;
+    }
 
-    h2 { font-size: 4vw; margin-bottom: 0.5rem; }
-    p { font-size: 2.5vw; max-width: 80%; margin: 0.5rem 0; }
-    .btns { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-    .btns a { text-decoration: none; background-color: #d8b08c; color: white; padding: 1rem 2rem; border-radius: 8px; font-size: 2vw; font-weight: bold; transition: background 0.3s; }
-    .btns a:hover { background-color: #c5997c; }
+    .slides {
+      width: 100%;
+      height: 300vh;
+      animation: slideAnimation 15s infinite;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      padding: 2rem;
+      text-align: center;
+      background: rgba(255,245,240,0.9);
+    }
+
+    h2 {
+      font-size: 4vw;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 2.5vw;
+      max-width: 80%;
+      margin: 0.5rem 0;
+    }
+
+    .btns {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btns a {
+      text-decoration: none;
+      background-color: #d8b08c;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 2vw;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btns a:hover {
+      background-color: #c5997c;
+    }
 
     @keyframes slideAnimation {
-      0% { transform: translateY(0); } 30% { transform: translateY(0); }
-      35% { transform: translateY(-100vh); } 65% { transform: translateY(-100vh); }
-      70% { transform: translateY(-200vh); } 100% { transform: translateY(-200vh); }
+      0% { transform: translateY(0); }
+      30% { transform: translateY(0); }
+      35% { transform: translateY(-100vh); }
+      65% { transform: translateY(-100vh); }
+      70% { transform: translateY(-200vh); }
+      100% { transform: translateY(-200vh); }
     }
 
     @media (max-width: 600px) {
@@ -124,20 +193,20 @@
       .names .name { font-size: 8vw; }
       .names .ampersand { font-size: 6vw; }
       #cover .invite-text { font-size: 3vw; }
-      #cover .envelope-container { width: 120px; height: 120px; }
-      #cover .envelope-container .seal { top: 35px; left: 35px; width: 40px; height: 40px; }
-      h2 { font-size: 6vw; } p { font-size: 4vw; } .btns a { font-size: 4vw; padding: 0.8rem 1.5rem; }
+      #cover .envelope-container { width: 150px; height: 150px; }
+      #cover .envelope-container .seal { top: 50px; left: 50px; width: 40px; height: 40px; }
+      h2 { font-size: 6vw; }
+      p { font-size: 4vw; }
+      .btns a { font-size: 4vw; padding: 0.8rem 1.5rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Música de fondo -->
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
     Tu navegador no soporta audio HTML5.
   </audio>
 
-  <!-- Portada con nombres y sobre -->
   <div id="cover">
     <div class="floral-top-right"></div>
     <div class="floral-bottom-left"></div>
@@ -161,7 +230,6 @@
     </div>
   </div>
 
-  <!-- Slideshow de invitación -->
   <div class="viewport" id="slideshow-container">
     <div class="slides">
       <section class="section">
@@ -183,7 +251,7 @@
   </div>
 
   <script>
-    document.getElementById('openEnvelope').addEventListener('click', function() {
+    document.getElementById('openEnvelope').addEventListener('click', function () {
       document.getElementById('cover').style.display = 'none';
       document.querySelector('.viewport').style.display = 'block';
     });
