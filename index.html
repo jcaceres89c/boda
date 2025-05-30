@@ -7,103 +7,68 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
-      height: 100%;
-      overflow: hidden;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; }
     body {
       font-family: 'Playfair Display', serif;
       background: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #5e4637;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 247, 240, 0.85);
-      z-index: 1;
-    }
-    .viewport {
       position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      z-index: 2;
     }
-    .slides {
-      width: 100%;
-      height: 400vh; /* 4 secciones x 100vh */
-      animation: slideAnimation 20s infinite;
+    .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 247, 240, 0.85); z-index: 1; }
+
+    /* Cover Page */
+    #cover {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+      background: url('https://images.unsplash.com/photo-1510251727245-ca52a5f2d19e?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background-size: cover;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      z-index: 5;
     }
-    .section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100vh;
-      padding: 2rem;
-      text-align: center;
+    #cover h1 { font-family: 'Great Vibes', cursive; font-size: 10vw; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); margin-bottom: 1rem; }
+    #cover h2 { font-size: 5vw; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.6); margin-bottom: 2rem; }
+    #envelope {
+      width: 150px; height: 150px; cursor: pointer;
+      background: url('https://image.flaticon.com/icons/png/512/561/561127.png') no-repeat center center;
+      background-size: contain;
+      position: relative;
     }
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 8vw;
-      margin-bottom: 1rem;
-      color: #b08d57;
+    #seal {
+      width: 50px; height: 50px; background: url('https://image.flaticon.com/icons/png/512/2913/2913461.png') no-repeat center center;
+      background-size: contain; position: absolute; top: 50px; left: 50px;
+      animation: pulse 2s infinite;
     }
-    h2 {
-      font-size: 4vw;
-      margin-bottom: 0.5rem;
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
-    p {
-      font-size: 2.5vw;
-      max-width: 80%;
-      margin: 0.5rem 0;
-    }
-    .btns {
-      margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .btns a {
-      text-decoration: none;
-      background-color: #d8b08c;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 2vw;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .btns a:hover {
-      background-color: #c5997c;
-    }
+
+    /* Slideshow */
+    .viewport { display: none; position: relative; width: 100%; height: 100vh; overflow: hidden; z-index: 2; }
+    .slides { width: 100%; height: 400vh; animation: slideAnimation 20s infinite; }
+    .section { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100vh; padding: 2rem; text-align: center; }
+
+    h1 { font-family: 'Great Vibes', cursive; font-size: 8vw; margin-bottom: 1rem; color: #b08d57; }
+    h2 { font-size: 4vw; margin-bottom: 0.5rem; }
+    p { font-size: 2.5vw; max-width: 80%; margin: 0.5rem 0; }
+    .btns { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .btns a { text-decoration: none; background-color: #d8b08c; color: white; padding: 1rem 2rem; border-radius: 8px; font-size: 2vw; font-weight: bold; transition: background 0.3s; }
+    .btns a:hover { background-color: #c5997c; }
+
     @keyframes slideAnimation {
-      0% { transform: translateY(0); }
-      20% { transform: translateY(0); }
-      25% { transform: translateY(-100vh); }
-      45% { transform: translateY(-100vh); }
-      50% { transform: translateY(-200vh); }
-      70% { transform: translateY(-200vh); }
-      75% { transform: translateY(-300vh); }
-      95% { transform: translateY(-300vh); }
+      0% { transform: translateY(0); } 20% { transform: translateY(0); }
+      25% { transform: translateY(-100vh); } 45% { transform: translateY(-100vh); }
+      50% { transform: translateY(-200vh); } 70% { transform: translateY(-200vh); }
+      75% { transform: translateY(-300vh); } 95% { transform: translateY(-300vh); }
       100% { transform: translateY(0); }
     }
     @media (max-width: 600px) {
-      h1 { font-size: 12vw; }
-      h2 { font-size: 6vw; }
-      p { font-size: 4vw; }
+      h1 { font-size: 12vw; } h2 { font-size: 6vw; } p { font-size: 4vw; }
       .btns a { font-size: 4vw; padding: 0.8rem 1.5rem; }
+      #cover h1 { font-size: 12vw; } #cover h2 { font-size: 8vw; }
+      #envelope { width: 100px; height: 100px; }
+      #seal { width: 40px; height: 40px; top: 30px; left: 30px; }
     }
   </style>
 </head>
@@ -113,12 +78,20 @@
     Tu navegador no soporta audio HTML5.
   </audio>
 
+  <div id="cover">
+    <h1>NUESTRA BODA</h1>
+    <h2>Briggitte &amp; Martin</h2>
+    <div id="envelope">
+      <div id="seal"></div>
+    </div>
+  </div>
+
   <div class="overlay"></div>
-  <div class="viewport">
+  <div class="viewport" id="slideshow-container">
     <div class="slides">
       <section class="section">
         <h1>NUESTRA BODA</h1>
-        <h2>Briggitte & Martin</h2>
+        <h2>Briggitte &amp; Martin</h2>
         <p>¡Nos casamos! Y queremos que seas parte de este día tan especial.</p>
       </section>
       <section class="section">
@@ -138,5 +111,13 @@
       </section>
     </div>
   </div>
+
+  <script>
+    // Al hacer clic en el sobre, ocultar cover y mostrar slideshow
+    document.getElementById('envelope').addEventListener('click', function() {
+      document.getElementById('cover').style.display = 'none';
+      document.querySelector('.viewport').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
