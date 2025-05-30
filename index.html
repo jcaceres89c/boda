@@ -19,14 +19,14 @@
     /* Cover Page */
     #cover {
       position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-      background: url('https://images.unsplash.com/photo-1510251727245-ca52a5f2d19e?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background: url('images/fondo.jpg') no-repeat center center; /* Asegúrate de tener fondo.jpg */
       background-size: cover;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       text-align: center; z-index: 5;
     }
     #cover .floral-wreath {
       width: 80vw; max-width: 400px; height: auto;
-      background: url('https://i.imgur.com/6YwKZ0b.png') no-repeat center center; /* Placeholder wreath */
+      background: url('images/corona.png') no-repeat center center; /* Asegúrate de tener corona.png */
       background-size: contain;
       display: flex; justify-content: center; align-items: center;
     }
@@ -52,7 +52,7 @@
     }
     #cover .envelope-container .seal {
       position: absolute; top: 35px; left: 35px; width: 50px; height: 50px;
-      background: url('https://image.flaticon.com/icons/png/512/2913/2913461.png') no-repeat center center;
+      background: url('images/sello.png') no-repeat center center;
       background-size: contain; animation: pulse 2s infinite;
     }
     @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
@@ -86,7 +86,7 @@
 <body>
   <!-- Música de fondo -->
   <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    <source src="audio/bensound-romantic.mp3" type="audio/mpeg">
     Tu navegador no soporta audio HTML5.
   </audio>
 
@@ -100,7 +100,7 @@
       <p>Hemos reservado <span class="highlight">2</span> lugares para ti</p>
     </div>
     <div class="envelope-container" id="openEnvelope">
-      <img src="https://image.flaticon.com/icons/png/512/561/561127.png" alt="Sobre">
+      <img src="images/sobre.png" alt="Sobre">
       <div class="seal"></div>
     </div>
   </div>
@@ -117,7 +117,7 @@
         <p>Sábado 13 de septiembre, 9:00 PM<br>Jr local</p>
       </section>
       <section class="section">
-        <p>mensaje mensaje mensaje</p>
+        <p>¡Estamos felices de compartir este momento contigo!</p>
         <div class="btns">
           <a href="mailto:boda@example.com?subject=Confirmo asistencia a la iglesia">Voy a la iglesia</a>
           <a href="mailto:boda@example.com?subject=Confirmo asistencia a la recepción">Voy al local</a>
@@ -127,7 +127,6 @@
   </div>
 
   <script>
-    // Al hacer clic en el sobre, ocultar portada y mostrar slideshow
     document.getElementById('openEnvelope').addEventListener('click', function() {
       document.getElementById('cover').style.display = 'none';
       document.querySelector('.viewport').style.display = 'block';
