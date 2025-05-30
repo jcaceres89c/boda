@@ -113,9 +113,10 @@
   </div>
 
   <script>
-    // Al hacer clic en el sobre, ocultar cover y mostrar slideshow
+    // Al hacer clic en el sobre, ocultar cover y overlay, mostrar slideshow
     document.getElementById('envelope').addEventListener('click', function() {
       document.getElementById('cover').style.display = 'none';
+      document.querySelector('.overlay').style.display = 'none';
       document.querySelector('.viewport').style.display = 'block';
     });
   </script>
