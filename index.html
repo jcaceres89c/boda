@@ -19,42 +19,87 @@
     /* Cover Page */
     #cover {
       position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-      background: url('images/fondo.jpg') no-repeat center center; /* Asegúrate de tener fondo.jpg */
+      background: url('https://images.unsplash.com/photo-1510251727245-ca52a5f2d19e?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
       background-size: cover;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; z-index: 5;
+      text-align: center; z-index: 5; padding: 2rem;
     }
-    #cover .floral-wreath {
-      width: 80vw; max-width: 400px; height: auto;
-      background: url('images/corona.png') no-repeat center center; /* Asegúrate de tener corona.png */
-      background-size: contain;
-      display: flex; justify-content: center; align-items: center;
+
+    .name-box {
+      background-color: #e6d1b3;
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 6;
     }
-    #cover .floral-wreath h1 {
+
+    .names {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .names .name {
       font-family: 'Great Vibes', cursive;
-      font-size: 5vw; color: #8b5e3c;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      font-size: 6vw;
+      color: #5e4637;
     }
+
+    .names .ampersand {
+      font-size: 4vw;
+      font-weight: bold;
+      margin: 0.5rem 0;
+      color: #5e4637;
+    }
+
+    .floral-top-right, .floral-bottom-left {
+      position: absolute;
+      width: 120px;
+      height: auto;
+      background: url('https://i.imgur.com/6YwKZ0b.png') no-repeat center center;
+      background-size: contain;
+      z-index: 1;
+    }
+
+    .floral-top-right {
+      top: 0;
+      right: 0;
+    }
+
+    .floral-bottom-left {
+      bottom: 0;
+      left: 0;
+    }
+
     #cover .invite-text {
       margin-top: 2rem; font-size: 1rem; color: #5e4637;
     }
+
     #cover .invite-text p {
       margin: 0.5rem 0;
     }
+
     #cover .invite-text .highlight {
       font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
     }
+
     #cover .envelope-container {
-      margin-top: 2rem; position: relative; width: 120px; height: 120px; cursor: pointer;
+      margin-top: 2rem; position: relative;
+      width: 180px; height: 180px;
+      cursor: pointer;
+      z-index: 6;
     }
+
     #cover .envelope-container img {
       width: 100%; height: 100%; object-fit: contain;
     }
+
     #cover .envelope-container .seal {
-      position: absolute; top: 35px; left: 35px; width: 50px; height: 50px;
-      background: url('images/sello.png') no-repeat center center;
+      position: absolute; top: 65px; left: 65px; width: 50px; height: 50px;
+      background: url('https://image.flaticon.com/icons/png/512/2913/2913461.png') no-repeat center center;
       background-size: contain; animation: pulse 2s infinite;
     }
+
     @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
     /* Slideshow */
@@ -73,12 +118,14 @@
       35% { transform: translateY(-100vh); } 65% { transform: translateY(-100vh); }
       70% { transform: translateY(-200vh); } 100% { transform: translateY(-200vh); }
     }
+
     @media (max-width: 600px) {
-      #cover .floral-wreath { width: 60vw; }
-      #cover .floral-wreath h1 { font-size: 8vw; }
+      .name-box { padding: 1.5rem 2rem; }
+      .names .name { font-size: 8vw; }
+      .names .ampersand { font-size: 6vw; }
       #cover .invite-text { font-size: 3vw; }
-      #cover .envelope-container { width: 80px; height: 80px; }
-      #cover .envelope-container .seal { top: 20px; left: 20px; width: 40px; height: 40px; }
+      #cover .envelope-container { width: 120px; height: 120px; }
+      #cover .envelope-container .seal { top: 35px; left: 35px; width: 40px; height: 40px; }
       h2 { font-size: 6vw; } p { font-size: 4vw; } .btns a { font-size: 4vw; padding: 0.8rem 1.5rem; }
     }
   </style>
@@ -86,19 +133,28 @@
 <body>
   <!-- Música de fondo -->
   <audio autoplay loop>
-    <source src="audio/bensound-romantic.mp3" type="audio/mpeg">
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
     Tu navegador no soporta audio HTML5.
   </audio>
 
-  <!-- Portada con corona floral y sobre -->
+  <!-- Portada con nombres y sobre -->
   <div id="cover">
-    <div class="floral-wreath">
-      <h1>Briggitte &amp; Martin</h1>
+    <div class="floral-top-right"></div>
+    <div class="floral-bottom-left"></div>
+
+    <div class="name-box">
+      <div class="names">
+        <div class="name">Briggitte</div>
+        <div class="ampersand">&amp;</div>
+        <div class="name">Martin</div>
+      </div>
     </div>
+
     <div class="invite-text">
       <p>Estamos felices de invitarlos a <span class="highlight">NUESTRA BODA</span></p>
       <p>Hemos reservado <span class="highlight">2</span> lugares para ti</p>
     </div>
+
     <div class="envelope-container" id="openEnvelope">
       <img src="images/sobre.png" alt="Sobre">
       <div class="seal"></div>
@@ -117,7 +173,7 @@
         <p>Sábado 13 de septiembre, 9:00 PM<br>Jr local</p>
       </section>
       <section class="section">
-        <p>¡Estamos felices de compartir este momento contigo!</p>
+        <p>mensaje mensaje mensaje</p>
         <div class="btns">
           <a href="mailto:boda@example.com?subject=Confirmo asistencia a la iglesia">Voy a la iglesia</a>
           <a href="mailto:boda@example.com?subject=Confirmo asistencia a la recepción">Voy al local</a>
