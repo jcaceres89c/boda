@@ -11,8 +11,7 @@
     html, body { height: 100%; overflow: hidden; }
     body {
       font-family: 'Playfair Display', serif;
-      background: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
+      background: #faf5f0;
       color: #5e4637;
       position: relative;
     }
@@ -23,32 +22,46 @@
       background: url('https://images.unsplash.com/photo-1510251727245-ca52a5f2d19e?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
       background-size: cover;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
-      z-index: 5;
+      text-align: center; z-index: 5;
     }
-    #cover h1 { font-family: 'Great Vibes', cursive; font-size: 10vw; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); margin-bottom: 1rem; }
-    #cover h2 { font-size: 5vw; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.6); margin-bottom: 2rem; }
-    #envelope {
-      width: 150px; height: 150px; cursor: pointer;
-      background: url('https://image.flaticon.com/icons/png/512/561/561127.png') no-repeat center center;
+    #cover .floral-wreath {
+      width: 80vw; max-width: 400px; height: auto;
+      background: url('https://i.imgur.com/6YwKZ0b.png') no-repeat center center; /* Placeholder wreath */
       background-size: contain;
-      position: relative;
+      display: flex; justify-content: center; align-items: center;
     }
-    #seal {
-      width: 50px; height: 50px; background: url('https://image.flaticon.com/icons/png/512/2913/2913461.png') no-repeat center center;
-      background-size: contain; position: absolute; top: 50px; left: 50px;
-      animation: pulse 2s infinite;
+    #cover .floral-wreath h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 5vw; color: #8b5e3c;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
-    @keyframes pulse {
-      0%,100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+    #cover .invite-text {
+      margin-top: 2rem; font-size: 1rem; color: #5e4637;
     }
+    #cover .invite-text p {
+      margin: 0.5rem 0;
+    }
+    #cover .invite-text .highlight {
+      font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+    }
+    #cover .envelope-container {
+      margin-top: 2rem; position: relative; width: 120px; height: 120px; cursor: pointer;
+    }
+    #cover .envelope-container img {
+      width: 100%; height: 100%; object-fit: contain;
+    }
+    #cover .envelope-container .seal {
+      position: absolute; top: 35px; left: 35px; width: 50px; height: 50px;
+      background: url('https://image.flaticon.com/icons/png/512/2913/2913461.png') no-repeat center center;
+      background-size: contain; animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
     /* Slideshow */
     .viewport { display: none; position: relative; width: 100%; height: 100vh; overflow: hidden; z-index: 2; }
-    .slides { width: 100%; height: 400vh; animation: slideAnimation 20s infinite; }
-    .section { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100vh; padding: 2rem; text-align: center; }
+    .slides { width: 100%; height: 300vh; animation: slideAnimation 15s infinite; }
+    .section { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100vh; padding: 2rem; text-align: center; background: rgba(255,245,240,0.9); }
 
-    h1 { font-family: 'Great Vibes', cursive; font-size: 8vw; margin-bottom: 1rem; color: #b08d57; }
     h2 { font-size: 4vw; margin-bottom: 0.5rem; }
     p { font-size: 2.5vw; max-width: 80%; margin: 0.5rem 0; }
     .btns { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
@@ -56,42 +69,45 @@
     .btns a:hover { background-color: #c5997c; }
 
     @keyframes slideAnimation {
-      0% { transform: translateY(0); } 20% { transform: translateY(0); }
-      25% { transform: translateY(-100vh); } 45% { transform: translateY(-100vh); }
-      50% { transform: translateY(-200vh); } 70% { transform: translateY(-200vh); }
-      75% { transform: translateY(-300vh); } 95% { transform: translateY(-300vh); }
-      100% { transform: translateY(0); }
+      0% { transform: translateY(0); } 30% { transform: translateY(0); }
+      35% { transform: translateY(-100vh); } 65% { transform: translateY(-100vh); }
+      70% { transform: translateY(-200vh); } 100% { transform: translateY(-200vh); }
     }
     @media (max-width: 600px) {
-      h1 { font-size: 12vw; } h2 { font-size: 6vw; } p { font-size: 4vw; }
-      .btns a { font-size: 4vw; padding: 0.8rem 1.5rem; }
-      #cover h1 { font-size: 12vw; } #cover h2 { font-size: 8vw; }
-      #envelope { width: 100px; height: 100px; }
-      #seal { width: 40px; height: 40px; top: 30px; left: 30px; }
+      #cover .floral-wreath { width: 60vw; }
+      #cover .floral-wreath h1 { font-size: 8vw; }
+      #cover .invite-text { font-size: 3vw; }
+      #cover .envelope-container { width: 80px; height: 80px; }
+      #cover .envelope-container .seal { top: 20px; left: 20px; width: 40px; height: 40px; }
+      h2 { font-size: 6vw; } p { font-size: 4vw; } .btns a { font-size: 4vw; padding: 0.8rem 1.5rem; }
     }
   </style>
 </head>
 <body>
+  <!-- Música de fondo -->
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
     Tu navegador no soporta audio HTML5.
   </audio>
 
+  <!-- Portada con corona floral y sobre -->
   <div id="cover">
-    <h1>NUESTRA BODA</h1>
-    <h2>Briggitte &amp; Martin</h2>
-    <div id="envelope">
-      <div id="seal"></div>
+    <div class="floral-wreath">
+      <h1>Briggitte &amp; Martin</h1>
+    </div>
+    <div class="invite-text">
+      <p>Estamos felices de invitarlos a <span class="highlight">NUESTRA BODA</span></p>
+      <p>Hemos reservado <span class="highlight">2</span> lugares para ti</p>
+    </div>
+    <div class="envelope-container" id="openEnvelope">
+      <img src="https://image.flaticon.com/icons/png/512/561/561127.png" alt="Sobre">
+      <div class="seal"></div>
     </div>
   </div>
 
+  <!-- Slideshow de invitación -->
   <div class="viewport" id="slideshow-container">
     <div class="slides">
-      <section class="section">
-        <h1>NUESTRA BODA</h1>
-        <h2>Briggitte &amp; Martin</h2>
-        <p>¡Nos casamos! Y queremos que seas parte de este día tan especial.</p>
-      </section>
       <section class="section">
         <h2>Ceremonia Religiosa</h2>
         <p>Sábado 13 de septiembre, 7:00 PM<br>Jr iglesia</p>
@@ -111,8 +127,8 @@
   </div>
 
   <script>
-    // Al hacer clic en el sobre, ocultar cover y mostrar slideshow
-    document.getElementById('envelope').addEventListener('click', function() {
+    // Al hacer clic en el sobre, ocultar portada y mostrar slideshow
+    document.getElementById('openEnvelope').addEventListener('click', function() {
       document.getElementById('cover').style.display = 'none';
       document.querySelector('.viewport').style.display = 'block';
     });
