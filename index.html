@@ -83,7 +83,7 @@
       margin: 1rem 0;
       color: #5e4637;
       z-index: 1;
-      font-family: Arial, sans-serif; /* Puede quedar otra fuente aquí si quieres */
+      font-family: Arial, sans-serif;
     }
 
     /* Sobre */
@@ -103,21 +103,33 @@
 
     /* Responsive */
     @media (max-width: 600px) {
+      #cover {
+        padding: 0.5rem;
+        height: auto;
+        min-height: 100vh;
+      }
+
+      .names-box {
+        padding: 3rem 2rem;
+      }
+
       .names-box .name {
-        font-size: 6vw;
+        font-size: 10vw;
       }
 
       .names-box .ampersand {
-        font-size: 5vw;
+        font-size: 8vw;
+        margin: 0.3rem 0;
       }
 
       .invite-text {
-        font-size: 4vw;
+        font-size: 5vw;
       }
 
       .envelope-container {
         width: 80px;
         height: 80px;
+        margin-top: 1rem;
       }
 
       .corona-izq-sup,
