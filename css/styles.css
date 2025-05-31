@@ -1,22 +1,14 @@
-/* styles.css */
-
 /* 1. Importa las fuentes Dancing Script (peso 700) y Mea Culpa para usar en la página */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mea+Culpa&display=swap');
 
-/* 2. Reset básico para todos los elementos:
-   - Elimina margen y padding predeterminados.
-   - Aplica box-sizing: border-box para incluir padding y borde en el ancho y alto total. */
+/* 2. Reset básico para todos los elementos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 3. Estilos generales para html y body:
-   - Altura 100% para que ocupen toda la ventana.
-   - Fuente principal 'Dancing Script'.
-   - Fondo con imagen fija centrada que cubre todo el área.
-   - Color de texto marrón oscuro. */
+/* 3. Estilos generales para html y body */
 html, body {
   height: 100%;
   font-family: 'Dancing Script', cursive;
@@ -25,37 +17,26 @@ html, body {
   color: #5e4637;
 }
 
-/* 4. Contenedor principal (#cover):
-   - Ocupa todo el ancho y alto.
-   - Flexbox para centrar vertical y horizontalmente contenido.
-   - Coloca elementos en columna.
-   - Texto centrado.
-   - Padding para separarlo de los bordes.
-   - Fondo semitransparente blanco para destacar texto. */
+/* 4. Contenedor principal (#cover) */
 #cover {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;  /* Centra horizontal */
-  align-items: center;      /* Centra vertical */
-  flex-direction: column;   /* Organiza elementos en columna */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   padding: 1rem;
   background-color: rgba(250, 245, 240, 0.6); /* Fondo translúcido */
 }
 
-/* 5. Caja de nombres (.names-box):
-   - Texto en color dorado.
-   - Margen inferior para separar del texto siguiente. */
+/* 5. Caja de nombres (.names-box) */
 .names-box {
   color: #AD8A1F;
   margin-bottom: 1rem;
 }
 
-/* 6. Nombres y el ampersand dentro de .names-box:
-   - Tamaño de fuente relativo a la ventana (vw).
-   - Negrita.
-   - Display block para que estén en línea separada. */
+/* 6. Nombres y el ampersand */
 .names-box .name,
 .names-box .ampersand {
   font-size: 6vw;
@@ -63,19 +44,13 @@ html, body {
   display: block;
 }
 
-/* 7. Ajuste específico para el ampersand (&):
-   - Tamaño un poco más pequeño que los nombres.
-   - Margen vertical pequeño para separar un poco. */
+/* 7. Ampersand más pequeño */
 .names-box .ampersand {
   font-size: 4vw;
   margin: 0.1rem 0;
 }
 
-/* 8. Texto de invitación (.invite-text):
-   - Fuente Arial para mejor lectura.
-   - Tamaño relativo (vw).
-   - Margen para separar de otros elementos.
-   - Color marrón oscuro y peso normal. */
+/* 8. Texto de invitación (.invite-text) */
 .invite-text {
   font-family: Arial, sans-serif;
   font-size: 3vw;
@@ -84,54 +59,63 @@ html, body {
   font-weight: normal;
 }
 
-/* 9. Contenedor del sobre (.envelope-container):
-   - Tamaño relativo a la ventana (20vw).
-   - Cursor pointer para indicar que es clickeable.
-   - Margen superior pequeño para separar del texto de arriba.
-   - z-index para que quede encima si hay elementos superpuestos. */
+/* 9. Contenedor del sobre y sello */
 .envelope-container {
+  position: relative; /* Necesario para posicionar el sello */
   width: 20vw;
   height: 20vw;
-  cursor: pointer;
-  margin-top: 0.5rem; /* Ajusta aquí la distancia hacia arriba o abajo */
+  margin-top: 0.5rem;
   z-index: 1;
 }
 
-/* 10. Imagen dentro del sobre:
-    - Ajusta la imagen al contenedor sin deformarla (object-fit: contain). */
-.envelope-container img {
+/* 10. Imagen del sobre */
+.sobre-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 1;
 }
 
-/* 11. Estilos para pantallas pequeñas (max-width: 600px):
-    - Ajusta márgenes y tamaños para mejor visibilidad en móviles. */
+/* 11. Imagen del sello superpuesta y clickeable */
+.sello-img {
+  position: absolute;
+  top: 300px;
+  right: 350px;
+  width: 30%;
+  height: auto;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* 12. Responsive: pantallas pequeñas */
 @media (max-width: 600px) {
-  /* 11a. Margen superior de la caja de nombres */
   .names-box {
     margin-top: 1rem;
   }
 
-  /* 11b. Tamaño de fuente grande para nombres */
   .names-box .name {
     font-size: 18vw;
   }
 
-  /* 11c. Tamaño del ampersand grande */
   .names-box .ampersand {
     font-size: 15vw;
   }
 
-  /* 11d. Texto de invitación más grande */
   .invite-text {
     font-size: 5vw;
   }
 
-  /* 11e. Sobre más grande y con margen superior reducido para subirlo */
   .envelope-container {
     width: 70vw;
     height: 70vw;
-    margin-top: 0.004rem; /* Ajusta para subir o bajar el sobre en móvil */
+    margin-top: 0.004rem;
+  }
+
+  .sello-img {
+    width: 30%;
+    top: 10%;
+    right: 10%;
   }
 }
