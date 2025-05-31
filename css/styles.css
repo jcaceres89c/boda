@@ -62,8 +62,8 @@ html, body {
 
 /* Sobre */
 .envelope-container {
-  width: 250px;
-  height: 250px;
+  width: 20vw;
+  height: 20vw;
   cursor: pointer;
   margin-top: 1rem; 
   z-index: 1;
