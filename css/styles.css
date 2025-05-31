@@ -89,12 +89,12 @@ html, body {
     font-size: 8vw;
   }
 
-  .invite-text {
+  .invite-text {s
     font-size: 5vw;
   }
 
   .envelope-container {
-    width: 20vw;
-    height: 20vw;
+    width: 50vw;
+    height: 50vw;
   }
 }
