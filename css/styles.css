@@ -166,7 +166,7 @@ html, body {
 
   .flecha-img {
     width: 15vw;
-    top: 350px;   /* Ajusta según necesidad */
-    right: 300px;  /* Ajusta según necesidad */
+    top: -150px;   /* Ajusta según necesidad */
+    right: -300px;  /* Ajusta según necesidad */
   }
 }
