@@ -154,26 +154,27 @@ html, body {
 
   .abrir-indicador {
     position: absolute;
-    top: 55%;        /* Baja a la altura de la carta */
-    left: 55%;       /* Centrado respecto al sobre */
+    top: 120px;       /* Baja a la altura de la carta */
+    left: 150px;      /* Ajusta para que quede centrado o donde prefieras */
     transform: translate(-50%, -50%);
     z-index: 3;
   }
-
+  
   .abrir-texto {
-    font-size: 5vw;
+    font-size: 24px;  /* Tamaño fijo en px */
     font-weight: bold;
     color: #AD8A1F;
     animation: parpadeo 1s infinite;
     font-family: Arial, sans-serif;
-    margin-bottom: 0.2rem;
+    margin-bottom: 4px;
   }
-
+  
   .flecha-img {
-    width: 15vw;
+    width: 60px;      /* Tamaño fijo en px */
     display: block;
-    margin: 0 auto; /* Centra horizontalmente la flecha */
+    margin: 0 auto;   /* Centra horizontalmente la flecha */
     animation: parpadeo 1s infinite;
   }
+  
 }
 }
