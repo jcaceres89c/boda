@@ -61,7 +61,7 @@ html, body {
 
 /* 9. Contenedor del sobre y sello */
 .envelope-container {
-  position: relative; /* Necesario para posicionar el sello */
+  position: relative; /* Necesario para posicionar el sello y texto encima */
   width: 20vw;
   height: 20vw;
   margin-top: 0.5rem;
@@ -81,15 +81,48 @@ html, body {
 /* 11. Imagen del sello superpuesta y clickeable */
 .sello-img {
   position: absolute;
-  top: 300px;
-  right: 350px;
+  top: 290px; /* Ajusta según necesidad */
+  right: 355px; /* Ajusta según necesidad */
   width: 30%;
   height: auto;
   z-index: 2;
   cursor: pointer;
 }
 
-/* 12. Responsive: pantallas pequeñas */
+/* 12. Texto ABRIR y flecha encima del sobre */
+.abrir-indicador {
+  position: absolute;
+  top: 1800px;         /* Ajusta para subir o bajar */
+  left: 2800px;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+}
+
+.abrir-texto {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #AD8A1F;
+  animation: parpadeo 1s infinite;
+  font-family: Arial, sans-serif;
+}
+
+.flecha-img {
+    width: 150px;
+    margin-top: -100px; /* mueve la flecha hacia abajo */
+    margin-left: -260px; /* mueve la flecha hacia la derecha */
+    /* o usa margin-right para moverla a la izquierda */
+    animation: parpadeo 1s infinite;
+  }
+  
+
+/* Animación parpadeo para el texto ABRIR */
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 13. Responsive: ajustes para pantallas pequeñas */
 @media (max-width: 600px) {
   .names-box {
     margin-top: 1rem;
@@ -115,7 +148,22 @@ html, body {
 
   .sello-img {
     width: 25%;
-    top: 120px;
-    right: 120px;
+    top: 250px;   /* Ajusta según necesidad */
+    right: 200px;  /* Ajusta según necesidad */
+  }
+
+  .abrir-indicador {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .abrir-texto {
+    font-size: 5vw;
+  }
+
+  .flecha-img {
+    width: 15vw;
+    margin-top: 5px;
   }
 }
