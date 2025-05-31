@@ -160,8 +160,8 @@ html, body {
 
   .abrir-texto {
     font-size: 5vw;
-    top: 350px;   /* Ajusta según necesidad */
-    right: 300px;  /* Ajusta según necesidad */
+    top: -350px;   /* Ajusta según necesidad */
+    right: -300px;  /* Ajusta según necesidad */
   }
 
   .flecha-img {
