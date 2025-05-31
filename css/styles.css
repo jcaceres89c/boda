@@ -152,29 +152,34 @@ html, body {
     right: 120px;  /* Ajusta según necesidad */
   }
 
-  .abrir-indicador {
-    position: absolute;
-    top: -1200px;       /* Baja a la altura de la carta */
-    left: -1150px;      /* Ajusta para que quede centrado o donde prefieras */
-    transform: translate(-50%, -50%);
-    z-index: 3;
-  }
-  
+  /* Texto "ABRIR" posicionado individualmente */
   .abrir-texto {
-    font-size: 24px;  /* Tamaño fijo en px */
+    position: absolute;
+    top: 185px;       /* Ajusta según la altura de la carta */
+    left: 165px;      /* Ajusta según la posición horizontal */
+    font-size: 20px;
     font-weight: bold;
     color: #AD8A1F;
     animation: parpadeo 1s infinite;
     font-family: Arial, sans-serif;
-    margin-bottom: 4px;
+    z-index: 3;
   }
-  
+
+  /* Flecha curva posicionada individualmente */
   .flecha-img {
-    width: 60px;      /* Tamaño fijo en px */
-    display: block;
-    margin: 0 auto;   /* Centra horizontalmente la flecha */
+    position: absolute;
+    top: 220px;       /* Justo debajo del texto */
+    left: 155px;      /* Puedes ajustar según necesidad */
+    width: 60px;
     animation: parpadeo 1s infinite;
+    z-index: 3;
   }
-  
+}
+
+/* Animación de parpadeo */
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 }
 }
