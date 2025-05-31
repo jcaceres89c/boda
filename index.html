@@ -8,7 +8,7 @@
   <!-- Estilos -->
   <style>
     /* Fuente Dancing Script con peso 700 */
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mea+Culpa&display=swap');
 
     /* Reset básico */
     * {
@@ -18,62 +18,53 @@
     }
 
     /* Estilos generales */
-    body, html {
+    html, body {
       height: 100%;
       font-family: 'Dancing Script', cursive;
-      background: url('images/corona3.png') no-repeat center center fixed;
+      background: url('images/fondo-boda.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #5e4637;
     }
 
     /* Contenedor principal */
     #cover {
-      position: relative;
-      width: 100%;
       height: 100%;
+      width: 100%;
       display: flex;
       justify-content: center;
-      align-items: flex-start; /* para que inicie desde arriba */
-      text-align: center;
+      align-items: center;
       flex-direction: column;
-      padding: 2rem 1rem 1rem 1rem;
-      overflow: hidden;
+      text-align: center;
+      padding: 1rem;
+      /* Fondo semitransparente para que el texto resalte */
+      background-color: rgba(250, 245, 240, 0.6);
     }
 
-    /* Cuadro de nombres */
+    /* Nombres sin cuadro, solo texto grande */
     .names-box {
       color: #AD8A1F;
-      padding: 0;
-      z-index: 1;
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
+      margin-bottom: 1rem;
     }
 
     .names-box .name,
     .names-box .ampersand {
-      display: block;
-      font-size: 4vw;
-      font-family: 'Dancing Script', cursive;
+      font-size: 6vw;
       font-weight: 700;
-      line-height: 1;
+      display: block;
     }
 
     .names-box .ampersand {
-      font-size: 3vw;
-      margin: 0.2rem 0;
+      font-size: 4vw;
+      margin: 0.1rem 0;
     }
 
     /* Texto de invitación */
     .invite-text {
+      font-family: Arial, sans-serif;
       font-size: 3vw;
       margin: 1rem 0;
       color: #5e4637;
-      z-index: 1;
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      font-weight: normal;
     }
 
     /* Sobre */
@@ -81,7 +72,7 @@
       width: 90px;
       height: 90px;
       cursor: pointer;
-      margin: 1rem auto 0 auto;
+      margin-top: 1rem;
       z-index: 1;
     }
 
@@ -93,16 +84,6 @@
 
     /* Responsive */
     @media (max-width: 600px) {
-      #cover {
-        padding-top: 1rem;
-        align-items: flex-start; /* para que quede arriba */
-      }
-
-      .names-box {
-        margin-top: -2rem; /* sube los nombres */
-        max-width: 100%;
-      }
-
       .names-box .name {
         font-size: 10vw;
       }
@@ -133,7 +114,8 @@
 
   <!-- 📦 Contenedor principal -->
   <div id="cover">
-    <!-- 💍 Nombres sin cuadro y con imagen de fondo en body -->
+
+    <!-- 💍 Nombres sin cuadro -->
     <div class="names-box">
       <span class="name">Briggitte</span>
       <span class="ampersand">&</span>
@@ -150,6 +132,7 @@
     <div class="envelope-container" id="openEnvelope">
       <img src="images/sobre.png" alt="Sobre" />
     </div>
+
   </div>
 
   <!-- 💡 Acción al hacer clic en el sobre -->
