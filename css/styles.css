@@ -1,7 +1,7 @@
-/* 1. Importa las fuentes Dancing Script (peso 700) y Mea Culpa para usar en la página */
+/* 1. Importa las fuentes Dancing Script (peso 700) y Mea Culpa */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mea+Culpa&display=swap');
 
-/* 2. Reset básico para todos los elementos */
+/* 2. Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -11,32 +11,35 @@
 /* 3. Estilos generales para html y body */
 html, body {
   height: 100%;
+  width: 100%;
   font-family: 'Dancing Script', cursive;
   background: url('../images/fondo-boda.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #5e4637;
+  overflow: hidden; /* 🚫 evita scroll */
 }
 
-/* 4. Contenedor principal (#cover) */
+/* 4. Contenedor principal */
 #cover {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
   padding: 1rem;
-  background-color: rgba(250, 245, 240, 0.6); /* Fondo translúcido */
+  background-color: rgba(250, 245, 240, 0.6);
+  overflow: hidden;
 }
 
-/* 5. Caja de nombres (.names-box) */
+/* 5. Caja de nombres */
 .names-box {
   color: #AD8A1F;
   margin-bottom: 1rem;
 }
 
-/* 6. Nombres y el ampersand */
+/* 6. Nombres y ampersand */
 .names-box .name,
 .names-box .ampersand {
   font-size: 6vw;
@@ -50,7 +53,7 @@ html, body {
   margin: 0.1rem 0;
 }
 
-/* 8. Texto de invitación (.invite-text) */
+/* 8. Texto de invitación */
 .invite-text {
   font-family: Arial, sans-serif;
   font-size: 3vw;
@@ -59,9 +62,9 @@ html, body {
   font-weight: normal;
 }
 
-/* 9. Contenedor del sobre y sello */
+/* 9. Contenedor del sobre */
 .envelope-container {
-  position: relative; /* Necesario para posicionar el sello y texto encima */
+  position: relative;
   width: 20vw;
   height: 20vw;
   margin-top: 0.5rem;
@@ -78,54 +81,54 @@ html, body {
   z-index: 1;
 }
 
-/* 11. Imagen del sello superpuesta y clickeable */
+/* 11. Imagen del sello superpuesta */
 .sello-img {
   position: absolute;
-  top: 290px; /* Ajusta según necesidad */
-  right: 355px; /* Ajusta según necesidad */
+  top: 6vw;
+  right: 7vw;
   width: 30%;
   height: auto;
   z-index: 2;
   cursor: pointer;
 }
 
-/* 12. Texto ABRIR y flecha encima del sobre */
-.abrir-indicador {
-  position: absolute;
-  top: 1800px;         /* Ajusta para subir o bajar */
-  left: 2800px;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 3;
-}
-
+/* 12. Texto "ABRIR" y flecha */
 .abrir-texto {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #AD8A1F;
-  animation: parpadeo 1s infinite;
-  font-family: Arial, sans-serif;
-}
-
-.flecha-img {
-    width: 150px;
-    margin-top: -100px; /* mueve la flecha hacia abajo */
-    margin-left: -260px; /* mueve la flecha hacia la derecha */
-    /* o usa margin-right para moverla a la izquierda */
+    position: absolute;
+    top: 37vw;    /* Ajusta verticalmente */
+    left: 53vw;   /* Ajusta horizontalmente */
+    font-size: 3rem;
+    font-weight: bold;
+    color: #AD8A1F;
     animation: parpadeo 1s infinite;
+    font-family: Arial, sans-serif;
+    z-index: 3;
+  }
+  
+  .flecha-img {
+    position: absolute;
+    top: 36vw;    /* Más abajo que el texto */
+    left: 50vw;   /* Puede estar un poco separado horizontalmente */
+    width: 150px;
+    animation: parpadeo 1s infinite;
+    z-index: 3;
   }
   
 
-/* Animación parpadeo para el texto ABRIR */
+/* Animación parpadeo */
 @keyframes parpadeo {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
-/* 13. Responsive: ajustes para pantallas pequeñas */
+/* 13. Responsive */
 @media (max-width: 600px) {
-  .names-box {
-    margin-top: 1rem;
+  html, body {
+    overflow: hidden;
+  }
+
+  #cover {
+    padding: 0.5rem;
   }
 
   .names-box .name {
@@ -133,31 +136,30 @@ html, body {
   }
 
   .names-box .ampersand {
-    font-size: 15vw;
+    font-size: 12vw;
   }
 
   .invite-text {
-    font-size: 5vw;
+    font-size: 6vw;
   }
 
   .envelope-container {
     width: 70vw;
     height: 70vw;
-    margin-top: 0.004rem;
+    margin-top: 1rem;
   }
 
   .sello-img {
     width: 25%;
-    top: 120px;   /* Ajusta según necesidad */
-    right: 120px;  /* Ajusta según necesidad */
+    top: 28vw;
+    right: 29vw;
   }
 
-  /* Texto "ABRIR" posicionado individualmente */
   .abrir-texto {
     position: absolute;
-    top: 185px;       /* Ajusta según la altura de la carta */
-    left: 165px;      /* Ajusta según la posición horizontal */
-    font-size: 20px;
+    top: 148vw;
+    left: 65vw;
+    font-size: 18px;
     font-weight: bold;
     color: #AD8A1F;
     animation: parpadeo 1s infinite;
@@ -165,21 +167,12 @@ html, body {
     z-index: 3;
   }
 
-  /* Flecha curva posicionada individualmente */
   .flecha-img {
     position: absolute;
-    top: 220px;       /* Justo debajo del texto */
-    left: 155px;      /* Puedes ajustar según necesidad */
-    width: 60px;
+    top: 145vw;
+    left: 52vw;
+    width: 50px;
     animation: parpadeo 1s infinite;
     z-index: 3;
   }
-}
-
-/* Animación de parpadeo */
-@keyframes parpadeo {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-}
 }
