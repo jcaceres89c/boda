@@ -132,6 +132,6 @@ html, body {
   .envelope-container {
     width: 70vw;
     height: 70vw;
-    margin-top: 0.05rem; /* Ajusta para subir o bajar el sobre en móvil */
+    margin-top: 0.004rem; /* Ajusta para subir o bajar el sobre en móvil */
   }
 }
