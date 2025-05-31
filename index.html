@@ -1,259 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Nuestra Boda - Briggitte & Martin</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
+  <meta charset="UTF-8" />
+  <title>Briggitte & Martin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; overflow: hidden; }
-    body {
-      font-family: 'Playfair Display', serif;
+  <!-- Estilos -->
+  <style>
+    /* Fuente Dancing Script con peso 700 */
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mea+Culpa&display=swap');
+
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Estilos generales */
+    body, html {
+      height: 100%;
+      font-family: 'Dancing Script', cursive;
       background: #faf5f0;
       color: #5e4637;
-      position: relative;
     }
 
+    /* Contenedor principal */
     #cover {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-      background: url('https://images.unsplash.com/photo-1510251727245-ca52a5f2d19e?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
-      background-size: cover;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; z-index: 5; padding: 2rem;
-    }
-
-    .name-box {
-      background-color: #bc785a;
-      padding: 2rem 3rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      z-index: 6;
-    }
-
-    .names {
+      position: relative;
+      width: 100%;
+      height: 100%;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 1rem;
+      overflow: hidden;
     }
 
-    .names .name {
-      font-family: 'Great Vibes', cursive;
-      font-size: 6vw;
-      color: white;
+    /* Cuadro de nombres con imagen de fondo */
+    .names-box {
+      position: relative;
+      display: inline-block;
+      border-radius: 10px;
+      color: #AD8A1F;
+      padding: 5rem 6rem;
+      z-index: 1;
+      overflow: hidden;
+      width: max-content;
     }
 
-    .names .ampersand {
-      font-size: 4vw;
-      font-weight: bold;
-      margin: 0.5rem 0;
-      color: white;
-    }
-
-    .floral-top-right, .floral-bottom-left {
+    .names-box .background-img {
       position: absolute;
-      width: 120px;
-      height: 120px;
-      background-image: url('https://i.imgur.com/fnZpFsJ.png'); /* imagen nueva funcional */
-      background-repeat: no-repeat;
-      background-size: contain;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      z-index: 0;
+    }
+
+    /* Cambié font-family y font-weight aquí */
+    .names-box .name,
+    .names-box .ampersand {
+      position: relative;
+      z-index: 1;
+      display: block;
+      font-size: 4vw;
+      font-family: 'Dancing Script', cursive;
+      font-weight: 700;
+    }
+
+    .names-box .ampersand {
+      font-size: 3vw;
+      margin: 0.2rem 0;
+    }
+
+    /* Texto de invitación */
+    .invite-text {
+      font-size: 3vw;
+      margin: 1rem 0;
+      color: #5e4637;
+      z-index: 1;
+      font-family: Arial, sans-serif; /* Puede quedar otra fuente aquí si quieres */
+    }
+
+    /* Sobre */
+    .envelope-container {
+      width: 90px;
+      height: 90px;
+      cursor: pointer;
+      margin-top: 1rem;
       z-index: 1;
     }
 
-    .floral-top-right {
-      top: 0;
-      right: 0;
-    }
-
-    .floral-bottom-left {
-      bottom: 0;
-      left: 0;
-    }
-
-    #cover .invite-text {
-      margin-top: 2rem;
-      font-size: 1rem;
-      color: #5e4637;
-    }
-
-    #cover .invite-text p {
-      margin: 0.5rem 0;
-    }
-
-    #cover .invite-text .highlight {
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    #cover .envelope-container {
-      margin-top: 2rem;
-      position: relative;
-      width: 220px;
-      height: 220px;
-      cursor: pointer;
-      z-index: 6;
-    }
-
-    #cover .envelope-container img {
+    .envelope-container img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
 
-    #cover .envelope-container .seal {
-      position: absolute;
-      top: 85px;
-      left: 85px;
-      width: 50px;
-      height: 50px;
-      background: url('https://image.flaticon.com/icons/png/512/2913/2913461.png') no-repeat center center;
-      background-size: contain;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-
-    .viewport {
-      display: none;
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      z-index: 2;
-    }
-
-    .slides {
-      width: 100%;
-      height: 300vh;
-      animation: slideAnimation 15s infinite;
-    }
-
-    .section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100vh;
-      padding: 2rem;
-      text-align: center;
-      background: rgba(255,245,240,0.9);
-    }
-
-    h2 {
-      font-size: 4vw;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: 2.5vw;
-      max-width: 80%;
-      margin: 0.5rem 0;
-    }
-
-    .btns {
-      margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .btns a {
-      text-decoration: none;
-      background-color: #d8b08c;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 2vw;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .btns a:hover {
-      background-color: #c5997c;
-    }
-
-    @keyframes slideAnimation {
-      0% { transform: translateY(0); }
-      30% { transform: translateY(0); }
-      35% { transform: translateY(-100vh); }
-      65% { transform: translateY(-100vh); }
-      70% { transform: translateY(-200vh); }
-      100% { transform: translateY(-200vh); }
-    }
-
+    /* Responsive */
     @media (max-width: 600px) {
-      .name-box { padding: 1.5rem 2rem; }
-      .names .name { font-size: 8vw; }
-      .names .ampersand { font-size: 6vw; }
-      #cover .invite-text { font-size: 3vw; }
-      #cover .envelope-container { width: 150px; height: 150px; }
-      #cover .envelope-container .seal { top: 50px; left: 50px; width: 40px; height: 40px; }
-      h2 { font-size: 6vw; }
-      p { font-size: 4vw; }
-      .btns a { font-size: 4vw; padding: 0.8rem 1.5rem; }
+      .names-box .name {
+        font-size: 6vw;
+      }
+
+      .names-box .ampersand {
+        font-size: 5vw;
+      }
+
+      .invite-text {
+        font-size: 4vw;
+      }
+
+      .envelope-container {
+        width: 80px;
+        height: 80px;
+      }
+
+      .corona-izq-sup,
+      .corona-der-inf {
+        width: 100px;
+        height: 100px;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- 🎵 Música de fondo -->
   <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg" />
     Tu navegador no soporta audio HTML5.
   </audio>
 
+  <!-- 📦 Contenedor principal -->
   <div id="cover">
-    <div class="floral-top-right"></div>
-    <div class="floral-bottom-left"></div>
 
-    <div class="name-box">
-      <div class="names">
-        <div class="name">Briggitte</div>
-        <div class="ampersand">&amp;</div>
-        <div class="name">Martin</div>
-      </div>
+    <!-- 👑 Coronas detrás del cuadro -->
+    <div class="corona corona-izq-sup"></div>
+    <div class="corona corona-der-inf"></div>
+
+    <!-- 💍 Cuadro de nombres con imagen de fondo -->
+    <div class="names-box">
+      <img src="images/corona3.png" alt="Fondo Nombres" class="background-img" />
+      <span class="name">Briggitte</span>
+      <span class="ampersand">&</span>
+      <span class="name">Martin</span>
     </div>
 
+    <!-- ✉️ Texto de invitación -->
     <div class="invite-text">
-      <p>Estamos felices de invitarlos a <span class="highlight">NUESTRA BODA</span></p>
-      <p>Hemos reservado <span class="highlight">2</span> lugares para ti</p>
+      <p>Estamos felices de invitarte a <strong>NUESTRA BODA</strong></p>
+      <p>Hemos reservado <strong>2</strong> lugares para ti</p>
     </div>
 
+    <!-- 📬 Sobre clickeable -->
     <div class="envelope-container" id="openEnvelope">
-      <img src="images/sobre.png" alt="Sobre">
-      <div class="seal"></div>
+      <img src="images/sobre.png" alt="Sobre" />
     </div>
+
   </div>
 
-  <div class="viewport" id="slideshow-container">
-    <div class="slides">
-      <section class="section">
-        <h2>Ceremonia Religiosa</h2>
-        <p>Sábado 13 de septiembre, 7:00 PM<br>Jr iglesia</p>
-      </section>
-      <section class="section">
-        <h2>Recepción</h2>
-        <p>Sábado 13 de septiembre, 9:00 PM<br>Jr local</p>
-      </section>
-      <section class="section">
-        <p>mensaje mensaje mensaje</p>
-        <div class="btns">
-          <a href="mailto:boda@example.com?subject=Confirmo asistencia a la iglesia">Voy a la iglesia</a>
-          <a href="mailto:boda@example.com?subject=Confirmo asistencia a la recepción">Voy al local</a>
-        </div>
-      </section>
-    </div>
-  </div>
-
+  <!-- 💡 Acción al hacer clic en el sobre -->
   <script>
     document.getElementById('openEnvelope').addEventListener('click', function () {
-      document.getElementById('cover').style.display = 'none';
-      document.querySelector('.viewport').style.display = 'block';
+      alert('Aquí puedes mostrar el resto de la invitación...');
     });
   </script>
 </body>
