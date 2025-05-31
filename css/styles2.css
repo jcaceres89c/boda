@@ -16,7 +16,7 @@ html, body {
   background: url('../images/fondo-boda.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #5e4637;
-  overflow-x: hidden; /* Solo evita scroll horizontal */
+  overflow: hidden; /* 🚫 evita scroll */
 }
 
 /* 4. Contenedor principal */
@@ -92,30 +92,28 @@ html, body {
   cursor: pointer;
 }
 
-/* 12. Texto "ABRIR" y flecha separados y fluidos */
+/* 12. Texto "ABRIR" y flecha */
 .abrir-texto {
-  position: absolute;
-  top: 37vw;    /* Ajustado para estar sobre el sobre */
-  left: 55%;
-  transform: translateX(-50%);
-  font-size: 1vw;
-  font-weight: bold;
-  color: #AD8A1F;
-  animation: parpadeo 1s infinite;
-  font-family: Arial, sans-serif;
-  z-index: 3;
-  white-space: nowrap;
-}
-
-.flecha-img {
-  position: absolute;
-  top: 35vw;   /* Un poco más abajo que el texto */
-  left: 51.5%;  
-  transform: translateX(-50%);
-  width: 4vw;  /* Tamaño relativo para adaptarse */
-  animation: parpadeo 1s infinite;
-  z-index: 3;
-}
+    position: absolute;
+    top: 37vw;    /* Ajusta verticalmente */
+    left: 53vw;   /* Ajusta horizontalmente */
+    font-size: 3rem;
+    font-weight: bold;
+    color: #AD8A1F;
+    animation: parpadeo 1s infinite;
+    font-family: Arial, sans-serif;
+    z-index: 3;
+  }
+  
+  .flecha-img {
+    position: absolute;
+    top: 36vw;    /* Más abajo que el texto */
+    left: 50vw;   /* Puede estar un poco separado horizontalmente */
+    width: 150px;
+    animation: parpadeo 1s infinite;
+    z-index: 3;
+  }
+  
 
 /* Animación parpadeo */
 @keyframes parpadeo {
@@ -123,10 +121,10 @@ html, body {
   50% { opacity: 0; }
 }
 
-/* 13. Responsive para móviles */
+/* 13. Responsive */
 @media (max-width: 600px) {
   html, body {
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   #cover {
@@ -152,20 +150,29 @@ html, body {
   }
 
   .sello-img {
-    width: 27%;
-    top: 25vw;
-    right: 25vw;
+    width: 25%;
+    top: 28vw;
+    right: 29vw;
   }
 
   .abrir-texto {
-    top: 130vw;
-    left:68%;
-    font-size: 3vw;
+    position: absolute;
+    top: 148vw;
+    left: 65vw;
+    font-size: 18px;
+    font-weight: bold;
+    color: #AD8A1F;
+    animation: parpadeo 1s infinite;
+    font-family: Arial, sans-serif;
+    z-index: 3;
   }
 
   .flecha-img {
-    top: 126vw;
-    left:58%
-    width: 12vw;
+    position: absolute;
+    top: 145vw;
+    left: 52vw;
+    width: 50px;
+    animation: parpadeo 1s infinite;
+    z-index: 3;
   }
 }
