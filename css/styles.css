@@ -62,10 +62,10 @@ html, body {
 
 /* Sobre */
 .envelope-container {
-  width: 90px;
-  height: 90px;
+  width: 250px;
+  height: 250px;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 1rem; 
   z-index: 1;
 }
 
@@ -78,7 +78,7 @@ html, body {
 /* Responsive */
 @media (max-width: 600px) {
   .names-box {
-    margin-top: 3rem; /* por ejemplo, mover hacia abajo */
+    margin-top: 1rem; /* por ejemplo, mover hacia abajo */
   }
 
   .names-box .name {
