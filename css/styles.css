@@ -154,8 +154,8 @@ html, body {
 
   .abrir-indicador {
     position: absolute;
-    top: 120px;       /* Baja a la altura de la carta */
-    left: 150px;      /* Ajusta para que quede centrado o donde prefieras */
+    top: -1200px;       /* Baja a la altura de la carta */
+    left: -1150px;      /* Ajusta para que quede centrado o donde prefieras */
     transform: translate(-50%, -50%);
     z-index: 3;
   }
