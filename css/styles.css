@@ -148,8 +148,8 @@ html, body {
 
   .sello-img {
     width: 25%;
-    top: 250px;   /* Ajusta según necesidad */
-    right: 200px;  /* Ajusta según necesidad */
+    top: 350px;   /* Ajusta según necesidad */
+    right: 300px;  /* Ajusta según necesidad */
   }
 
   .abrir-indicador {
@@ -160,10 +160,13 @@ html, body {
 
   .abrir-texto {
     font-size: 5vw;
+    top: 350px;   /* Ajusta según necesidad */
+    right: 300px;  /* Ajusta según necesidad */
   }
 
   .flecha-img {
     width: 15vw;
-    margin-top: 5px;
+    top: 350px;   /* Ajusta según necesidad */
+    right: 300px;  /* Ajusta según necesidad */
   }
 }
