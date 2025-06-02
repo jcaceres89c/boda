@@ -1,14 +1,13 @@
-/* 1. Importa las fuentes Dancing Script (peso 700) y Mea Culpa */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mea+Culpa&display=swap');
 
-/* 2. Reset básico */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 3. Estilos generales para html y body */
+/* Estilos generales */
 html, body {
   height: 100%;
   width: 100%;
@@ -16,10 +15,10 @@ html, body {
   background: url('../images/fondo-boda.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #5e4637;
-  overflow-x: hidden; /* Solo evita scroll horizontal */
+  overflow-x: hidden;
 }
 
-/* 4. Contenedor principal */
+/* Contenedor principal */
 #cover {
   height: 100vh;
   width: 100vw;
@@ -33,45 +32,52 @@ html, body {
   overflow: hidden;
 }
 
-/* 5. Caja de nombres */
+/* Caja de nombres */
 .names-box {
   color: #AD8A1F;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* 6. Nombres y ampersand */
 .names-box .name,
 .names-box .ampersand {
-  font-size: 6vw;
   font-weight: 700;
   display: block;
 }
 
-/* 7. Ampersand más pequeño */
-.names-box .ampersand {
-  font-size: 4vw;
-  margin: 0.1rem 0;
+.names-box .name {
+  font-size: clamp(32px, 8vw, 120px);
 }
 
-/* 8. Texto de invitación */
+.names-box .ampersand {
+  font-size: clamp(24px, 5vw, 90px);
+  margin: 0.2rem 0;
+}
+
+/* Texto de invitación */
 .invite-text {
   font-family: Arial, sans-serif;
-  font-size: 3vw;
-  margin: 1rem 0;
+  font-size: clamp(16px, 3.5vw, 32px);
+  margin: 1.5rem 0;
   color: #5e4637;
   font-weight: normal;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* 9. Contenedor del sobre */
+/* Contenedor del sobre */
 .envelope-container {
   position: relative;
-  width: 20vw;
-  height: 20vw;
-  margin-top: 0.5rem;
+  width: 25vw;
+  height: 25vw;
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 350px;
+  max-height: 350px;
+  margin-top: 1rem;
   z-index: 1;
 }
 
-/* 10. Imagen del sobre */
 .sobre-img {
   width: 100%;
   height: 100%;
@@ -81,91 +87,33 @@ html, body {
   z-index: 1;
 }
 
-/* 11. Imagen del sello superpuesta */
-.sello-img {
-  position: absolute;
-  top: 6vw;
-  right: 7vw;
-  width: 30%;
-  height: auto;
-  z-index: 2;
-  cursor: pointer;
-}
-
-/* 12. Texto "ABRIR" y flecha separados y fluidos */
-.abrir-texto {
-  position: absolute;
-  top: 37vw;    /* Ajustado para estar sobre el sobre */
-  left: 55%;
-  transform: translateX(-50%);
-  font-size: 1vw;
-  font-weight: bold;
-  color: #AD8A1F;
-  animation: parpadeo 1s infinite;
-  font-family: Arial, sans-serif;
-  z-index: 3;
-  white-space: nowrap;
-}
-
-.flecha-img {
-  position: absolute;
-  top: 35vw;   /* Un poco más abajo que el texto */
-  left: 51.5%;  
-  transform: translateX(-50%);
-  width: 4vw;  /* Tamaño relativo para adaptarse */
-  animation: parpadeo 1s infinite;
-  z-index: 3;
-}
-
-/* Animación parpadeo */
-@keyframes parpadeo {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* 13. Responsive para móviles */
+/* Responsive */
 @media (max-width: 600px) {
-  html, body {
-    overflow-x: hidden;
-  }
-
   #cover {
     padding: 0.5rem;
   }
 
   .names-box .name {
-    font-size: 18vw;
+    font-size: clamp(40px, 18vw, 90px);
   }
 
   .names-box .ampersand {
-    font-size: 12vw;
+    font-size: clamp(30px, 12vw, 70px);
   }
 
   .invite-text {
-    font-size: 6vw;
+    font-size: clamp(15px, 5.5vw, 22px);
+    margin: 0.8rem 0;
+    max-width: 90%;
   }
 
   .envelope-container {
-    width: 70vw;
-    height: 70vw;
-    margin-top: 1rem;
-  }
-
-  .sello-img {
-    width: 27%;
-    top: 25vw;
-    right: 25vw;
-  }
-
-  .abrir-texto {
-    top: 130vw;
-    left:68%;
-    font-size: 3vw;
-  }
-
-  .flecha-img {
-    top: 126vw;
-    left:58%
-    width: 12vw;
+    width: 65vw;
+    height: 65vw;
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 320px;
+    max-height: 320px;
+    margin-top: 2rem;
   }
 }

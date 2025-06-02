@@ -4,54 +4,42 @@
   <meta charset="UTF-8" />
   <title>Briggitte & Martin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mea+Culpa&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- 🎵 Música de fondo -->
+
+  <!-- Música de fondo -->
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg" />
     Tu navegador no soporta audio HTML5.
   </audio>
 
-  <!-- 📦 Contenedor principal -->
+  <!-- Contenedor principal -->
   <div id="cover">
-
-    <!-- 💍 Nombres sin cuadro -->
+    <!-- Nombres -->
     <div class="names-box">
       <span class="name">Briggitte</span>
       <span class="ampersand">&</span>
       <span class="name">Martin</span>
     </div>
 
-    <!-- ✉️ Texto de invitación -->
+    <!-- Texto de invitación -->
     <div class="invite-text" style="text-align: center;">
       <p>Estamos felices de invitarte a<br><strong>NUESTRA BODA</strong></p>
       <br>
       <p>¡Nos encantaría que nos acompañes en este día tan único!</p>
     </div>
 
-    <!-- 📬 Sobre clickeable -->
-    <div class="envelope-container">
+    <!-- Sobre clickeable que abre el PDF embebido -->
+    <a href="ver-invitacion.html" class="envelope-container">
       <img src="images/sobre.png" alt="Sobre" class="sobre-img" />
-      <img src="images/sello.png" alt="Sello" class="sello-img" id="openEnvelope" />
-    </div>
-
-    <div class="abrir-indicador">
-      <span class="abrir-texto">ABRIR</span>
-      <img src="images/flecha-curva.png" alt="Flecha" class="flecha-img" />
-    </div>
-    
-
+    </a>
   </div>
 
-  
-
-  <!-- 💡 Acción al hacer clic en el sobre -->
-  <script>
-    document.getElementById('openEnvelope').addEventListener('click', function () {
-      alert('Aquí puedes mostrar el resto de la invitación...');
-    });
-  </script>
-  
 </body>
 </html>
