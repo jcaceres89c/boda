@@ -10,25 +10,6 @@
 
   <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    .countdown-box {
-      margin-top: 2rem;
-      font-family: 'Arial', sans-serif;
-      color: #5e4637;
-      text-align: center;
-    }
-
-    .countdown-box p {
-      font-size: clamp(16px, 3vw, 28px);
-      margin-bottom: 0.5rem;
-    }
-
-    .countdown-timer {
-      font-size: clamp(20px, 4vw, 36px);
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-  </style>
 </head>
 <body>
 
@@ -41,28 +22,33 @@
   <!-- Contenedor principal -->
   <div id="cover">
     <!-- Nombres -->
-    <div class="names-box">
-      <span class="name">Briggitte</span>
-      <span class="ampersand">&</span>
-      <span class="name">Martin</span>
-    </div>
+    <style>
+  .names-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+</style>
+
+<div class="names-box">
+  <span class="name">Briggitte</span>
+  <span class="ampersand">&</span>
+  <span class="name">Martin</span>
+</div>
 
     <!-- Texto de invitación -->
-    <div class="invite-text" style="text-align: center;">
+    <div class="invite-text">
       <p>Estamos felices de invitarte a<br><strong>NUESTRA BODA</strong></p>
-      <br>
-      <p>¡Nos encantaría que nos acompañes en este día tan único!</p>
-    </div>
-
-    <!-- Reloj de cuenta regresiva -->
+       <!-- Reloj de cuenta regresiva -->
     <div id="countdown" class="countdown-box">
-      <p>Faltan:</p>
-      <div class="countdown-timer">
+        <div class="countdown-timer">
         <span id="days">00</span>d :
         <span id="hours">00</span>h :
         <span id="minutes">00</span>m :
         <span id="seconds">00</span>s
       </div>
+    </div>
+      <p>¡Nos encantaría que nos acompañes en este día tan único!</p>
     </div>
 
     <!-- Sobre clickeable que abre el PDF embebido -->
@@ -73,7 +59,7 @@
 
   <!-- Script del contador -->
   <script>
-    const eventDate = new Date("2025-12-20T16:00:00").getTime();
+    const eventDate = new Date("2025-09-13T19:00:00").getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();

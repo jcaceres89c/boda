@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mea+Culpa&display=swap');
+/* Importación local de Brittany Signature */
+@font-face {
+  font-family: 'Brittany Signature';
+  src: url('../fonts/BrittanySignatureRegular.woff2') format('woff2'),
+       url('../fonts/BrittanySignatureRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Reset básico */
 * {
@@ -9,13 +16,8 @@
 
 /* Estilos generales */
 html, body {
-  height: 100%;
-  width: 100%;
-  font-family: 'Dancing Script', cursive;
-  background: url('../images/fondo-boda.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #5e4637;
-  overflow-x: hidden;
+  background-color: #efe1d6;
+  color: #efe1d6; /* o el color que prefieras para el texto */
 }
 
 /* Contenedor principal */
@@ -23,25 +25,26 @@ html, body {
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
   background-color: rgba(250, 245, 240, 0.6);
   overflow: hidden;
+  text-align: center;
 }
 
 /* Caja de nombres */
 .names-box {
   color: #AD8A1F;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .names-box .name,
 .names-box .ampersand {
   font-weight: 700;
   display: block;
+  font-family: 'Brittany Signature', cursive;
 }
 
 .names-box .name {
@@ -55,14 +58,36 @@ html, body {
 
 /* Texto de invitación */
 .invite-text {
-  font-family: Arial, sans-serif;
+  font-family: 'Kitten', cursive;
   font-size: clamp(16px, 3.5vw, 32px);
-  margin: 1.5rem 0;
-  color: #5e4637;
+  margin: 0.5rem 0;
+  color: #8b5e66;
   font-weight: normal;
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Contador regresivo */
+.countdown-box {
+  margin-top: 0.5rem;
+  font-family: 'Kitten', cursive;
+  color: #8b5e66;
+  text-align: center;
+}
+
+.countdown-box p {
+  font-size: clamp(16px, 3vw, 28px);
+  margin-bottom: 0.3rem;
+}
+
+/* Aquí el cambio solicitado: tamaño y color del reloj */
+.countdown-timer {
+  font-size: clamp(36px, 7vw, 72px);  /* Más grande */
+  font-weight: 900;                   /* Más grueso */
+  letter-spacing: 2px;
+  font-family: 'Kitten', cursive;
+  color: #B22222;                    /* Rojo oscuro */
 }
 
 /* Contenedor del sobre */
@@ -74,7 +99,7 @@ html, body {
   min-height: 150px;
   max-width: 350px;
   max-height: 350px;
-  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   z-index: 1;
 }
 
@@ -85,25 +110,6 @@ html, body {
   display: block;
   position: relative;
   z-index: 1;
-}
-
-/* Countdown (reloj regresivo) */
-.countdown-box {
-  margin-top: 2rem;
-  font-family: 'Arial', sans-serif;
-  color: #5e4637;
-  text-align: center;
-}
-
-.countdown-box p {
-  font-size: clamp(16px, 3vw, 28px);
-  margin-bottom: 0.5rem;
-}
-
-.countdown-timer {
-  font-size: clamp(20px, 4vw, 36px);
-  font-weight: bold;
-  letter-spacing: 1px;
 }
 
 /* Responsive */
@@ -134,13 +140,36 @@ html, body {
     max-width: 320px;
     max-height: 320px;
     margin-top: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+/* Ajustes para pantallas con menos altura para evitar scroll vertical */
+@media (max-height: 700px) {
+  .names-box .name {
+    font-size: clamp(24px, 6vw, 60px);
   }
 
-  .countdown-box p {
-    font-size: clamp(14px, 5vw, 22px);
+  .names-box .ampersand {
+    font-size: clamp(20px, 5vw, 50px);
   }
 
+  .invite-text {
+    font-size: clamp(14px, 3vw, 22px);
+  }
+
+  .countdown-box p,
   .countdown-timer {
-    font-size: clamp(18px, 6vw, 28px);
+    font-size: clamp(20px, 4vw, 36px);
+  }
+
+  .envelope-container {
+    width: 50vw;
+    height: 50vw;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 250px;
+    max-height: 250px;
+    margin-bottom: 0.3rem;
   }
 }
