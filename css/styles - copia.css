@@ -87,25 +87,6 @@ html, body {
   z-index: 1;
 }
 
-/* Countdown (reloj regresivo) */
-.countdown-box {
-  margin-top: 2rem;
-  font-family: 'Arial', sans-serif;
-  color: #5e4637;
-  text-align: center;
-}
-
-.countdown-box p {
-  font-size: clamp(16px, 3vw, 28px);
-  margin-bottom: 0.5rem;
-}
-
-.countdown-timer {
-  font-size: clamp(20px, 4vw, 36px);
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
 /* Responsive */
 @media (max-width: 600px) {
   #cover {
@@ -136,11 +117,5 @@ html, body {
     margin-top: 2rem;
   }
 
-  .countdown-box p {
-    font-size: clamp(14px, 5vw, 22px);
-  }
-
-  .countdown-timer {
-    font-size: clamp(18px, 6vw, 28px);
-  }
+  
 }
