@@ -81,11 +81,13 @@ html, body {
   margin-bottom: 0.3rem;
 }
 
+/* Reloj */
 .countdown-timer {
-  font-size: clamp(20px, 4vw, 36px);
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-size: clamp(36px, 7vw, 72px);  /* Más grande */
+  font-weight: 900;                   /* Más grueso */
+  letter-spacing: 2px;
   font-family: 'Kitten', cursive;
+  color: #B22222;                    /* Rojo oscuro */
 }
 
 /* Contenedor del sobre */
@@ -114,11 +116,11 @@ html, body {
 @media (max-width: 600px) {
   #cover {
     padding: 0.5rem;
+    justify-content: center; /* Mejor alineación vertical */
   }
 
   .names-box .name {
-    /* Reducimos máximo para que no se salga */
-    font-size: clamp(32px, 14vw, 70px);
+    font-size: clamp(32px, 12vw, 64px);
   }
 
   .names-box .ampersand {
@@ -126,20 +128,20 @@ html, body {
   }
 
   .invite-text {
-    font-size: clamp(15px, 5.5vw, 22px);
-    margin: 0.5rem 0 0.2rem 0; /* Reducido margen inferior para acercar el sobre */
+    font-size: clamp(15px, 5vw, 20px);
+    margin: 0.5rem 0;
     max-width: 90%;
   }
 
   .envelope-container {
-    width: 65vw;
-    height: 65vw;
-    min-width: 180px;
-    min-height: 180px;
-    max-width: 320px;
-    max-height: 320px;
-    margin-top: 0.2rem; /* Menor margen superior para pegar el sobre */
-    margin-bottom: 0;
+    width: 60vw;
+    height: 60vw;
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 300px;
+    max-height: 300px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -159,7 +161,7 @@ html, body {
 
   .countdown-box p,
   .countdown-timer {
-    font-size: clamp(14px, 3.5vw, 20px);
+    font-size: clamp(20px, 4vw, 36px);
   }
 
   .envelope-container {
