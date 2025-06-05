@@ -1,63 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Briggitte & Martin</title>
+  <title>Briggitte & José Martin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mea+Culpa&display=swap" rel="stylesheet">
-
-  <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- Música de fondo -->
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg" />
     Tu navegador no soporta audio HTML5.
   </audio>
 
-  <!-- Contenedor principal -->
   <div id="cover">
-    <!-- Nombres -->
-    <style>
-  .names-box {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-</style>
+    <div class="names-box">
+      <span class="name">Briggitte</span>
+      <span class="ampersand">&</span>
+      <span class="name">Martin</span>
+    </div>
 
-<div class="names-box">
-  <span class="name">Briggitte</span>
-  <span class="ampersand">&</span>
-  <span class="name">Martin</span>
-</div>
-
-    <!-- Texto de invitación -->
     <div class="invite-text">
       <p>Estamos felices de invitarte a<br><strong>NUESTRA BODA</strong></p>
-       <!-- Reloj de cuenta regresiva -->
-    <div id="countdown" class="countdown-box">
+      <div id="countdown" class="countdown-box">
         <div class="countdown-timer">
-        <span id="days">00</span>d :
-        <span id="hours">00</span>h :
-        <span id="minutes">00</span>m :
-        <span id="seconds">00</span>s
+          <span id="days">00</span>d :
+          <span id="hours">00</span>h :
+          <span id="minutes">00</span>m :
+          <span id="seconds">00</span>s
+        </div>
       </div>
-    </div>
       <p>¡Nos encantaría que nos acompañes en este día tan único!</p>
     </div>
 
-    <!-- Sobre clickeable que abre el PDF embebido -->
     <a href="documentos/invitacion.pdf" target="_blank" class="envelope-container">
       <img src="images/sobre.png" alt="Sobre" class="sobre-img" />
     </a>
   </div>
 
-  <!-- Script del contador -->
   <script>
     const eventDate = new Date("2025-09-13T19:00:00").getTime();
 

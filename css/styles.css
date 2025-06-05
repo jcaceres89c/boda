@@ -1,4 +1,4 @@
-/* Importación local de Brittany Signature */
+
 @font-face {
   font-family: 'Brittany Signature';
   src: url('../fonts/BrittanySignatureRegular.woff2') format('woff2'),
@@ -7,20 +7,18 @@
   font-style: normal;
 }
 
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilos generales */
 html, body {
   background-color: #efe1d6;
-  color: #efe1d6; /* o el color que prefieras para el texto */
+  color: #efe1d6;
+  font-family: 'Brittany Signature', cursive;
 }
 
-/* Contenedor principal */
 #cover {
   height: 100vh;
   width: 100vw;
@@ -34,8 +32,13 @@ html, body {
   text-align: center;
 }
 
-/* Caja de nombres */
 .names-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 90%;
   color: #AD8A1F;
   margin-bottom: 0.5rem;
 }
@@ -45,10 +48,11 @@ html, body {
   font-weight: 700;
   display: block;
   font-family: 'Brittany Signature', cursive;
+  white-space: nowrap;
 }
 
 .names-box .name {
-  font-size: clamp(32px, 8vw, 120px);
+  font-size: clamp(32px, 7vw, 100px);
 }
 
 .names-box .ampersand {
@@ -56,9 +60,8 @@ html, body {
   margin: 0.2rem 0;
 }
 
-/* Texto de invitación */
 .invite-text {
-  font-family: 'Kitten', cursive;
+  font-family: 'Dancing Script', cursive;
   font-size: clamp(16px, 3.5vw, 32px);
   margin: 0.5rem 0;
   color: #8b5e66;
@@ -68,10 +71,9 @@ html, body {
   margin-right: auto;
 }
 
-/* Contador regresivo */
 .countdown-box {
   margin-top: 0.5rem;
-  font-family: 'Kitten', cursive;
+  font-family: 'Dancing Script', cursive;
   color: #8b5e66;
   text-align: center;
 }
@@ -81,16 +83,14 @@ html, body {
   margin-bottom: 0.3rem;
 }
 
-/* Reloj */
 .countdown-timer {
-  font-size: clamp(36px, 7vw, 72px);  /* Más grande */
-  font-weight: 900;                   /* Más grueso */
+  font-size: clamp(36px, 7vw, 72px);
+  font-weight: 900;
   letter-spacing: 2px;
-  font-family: 'Kitten', cursive;
-  color: #B22222;                    /* Rojo oscuro */
+  font-family: 'Dancing Script', cursive;
+  color: #B22222;
 }
 
-/* Contenedor del sobre */
 .envelope-container {
   position: relative;
   width: 25vw;
@@ -112,11 +112,10 @@ html, body {
   z-index: 1;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   #cover {
     padding: 0.5rem;
-    justify-content: center; /* Mejor alineación vertical */
+    justify-content: center;
   }
 
   .names-box .name {
@@ -142,35 +141,5 @@ html, body {
     max-height: 300px;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
-  }
-}
-
-/* Ajustes para pantallas con menos altura para evitar scroll vertical */
-@media (max-height: 700px) {
-  .names-box .name {
-    font-size: clamp(24px, 6vw, 60px);
-  }
-
-  .names-box .ampersand {
-    font-size: clamp(20px, 5vw, 50px);
-  }
-
-  .invite-text {
-    font-size: clamp(14px, 3vw, 22px);
-  }
-
-  .countdown-box p,
-  .countdown-timer {
-    font-size: clamp(20px, 4vw, 36px);
-  }
-
-  .envelope-container {
-    width: 50vw;
-    height: 50vw;
-    min-width: 120px;
-    min-height: 120px;
-    max-width: 250px;
-    max-height: 250px;
-    margin-bottom: 0.3rem;
   }
 }
