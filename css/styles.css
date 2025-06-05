@@ -81,13 +81,11 @@ html, body {
   margin-bottom: 0.3rem;
 }
 
-/* Aquí el cambio solicitado: tamaño y color del reloj */
 .countdown-timer {
-  font-size: clamp(36px, 7vw, 72px);  /* Más grande */
-  font-weight: 900;                   /* Más grueso */
-  letter-spacing: 2px;
+  font-size: clamp(20px, 4vw, 36px);
+  font-weight: bold;
+  letter-spacing: 1px;
   font-family: 'Kitten', cursive;
-  color: #B22222;                    /* Rojo oscuro */
 }
 
 /* Contenedor del sobre */
@@ -119,16 +117,17 @@ html, body {
   }
 
   .names-box .name {
-    font-size: clamp(40px, 18vw, 90px);
+    /* Reducimos máximo para que no se salga */
+    font-size: clamp(32px, 14vw, 70px);
   }
 
   .names-box .ampersand {
-    font-size: clamp(30px, 12vw, 70px);
+    font-size: clamp(24px, 10vw, 50px);
   }
 
   .invite-text {
     font-size: clamp(15px, 5.5vw, 22px);
-    margin: 0.8rem 0;
+    margin: 0.5rem 0 0.2rem 0; /* Reducido margen inferior para acercar el sobre */
     max-width: 90%;
   }
 
@@ -139,7 +138,7 @@ html, body {
     min-height: 180px;
     max-width: 320px;
     max-height: 320px;
-    margin-top: 2rem;
+    margin-top: 0.2rem; /* Menor margen superior para pegar el sobre */
     margin-bottom: 0;
   }
 }
@@ -160,7 +159,7 @@ html, body {
 
   .countdown-box p,
   .countdown-timer {
-    font-size: clamp(20px, 4vw, 36px);
+    font-size: clamp(14px, 3.5vw, 20px);
   }
 
   .envelope-container {
