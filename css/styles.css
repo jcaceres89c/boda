@@ -1,145 +1,18 @@
-
-@font-face {
-  font-family: 'Brittany Signature';
-  src: url('../fonts/BrittanySignatureRegular.woff2') format('woff2'),
-       url('../fonts/BrittanySignatureRegular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  background-color: #efe1d6;
-  color: #efe1d6;
-  font-family: 'Brittany Signature', cursive;
-}
-
-#cover {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: rgba(250, 245, 240, 0.6);
-  overflow: hidden;
-  text-align: center;
-}
-
-.names-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  max-width: 90%;
-  color: #AD8A1F;
-  margin-bottom: 0.5rem;
-}
-
-.names-box .name,
-.names-box .ampersand {
-  font-weight: 700;
-  display: block;
-  font-family: 'Brittany Signature', cursive;
-  white-space: nowrap;
-}
-
-.names-box .name {
-  font-size: clamp(32px, 7vw, 100px);
-}
-
-.names-box .ampersand {
-  font-size: clamp(24px, 5vw, 90px);
-  margin: 0.2rem 0;
-}
-
-.invite-text {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(16px, 3.5vw, 32px);
-  margin: 0.5rem 0;
-  color: #8b5e66;
-  font-weight: normal;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.countdown-box {
-  margin-top: 0.5rem;
-  font-family: 'Dancing Script', cursive;
-  color: #8b5e66;
-  text-align: center;
-}
-
-.countdown-box p {
-  font-size: clamp(16px, 3vw, 28px);
-  margin-bottom: 0.3rem;
-}
-
-.countdown-timer {
-  font-size: clamp(36px, 7vw, 72px);
-  font-weight: 900;
-  letter-spacing: 2px;
-  font-family: 'Dancing Script', cursive;
-  color: #B22222;
-}
-
-.envelope-container {
-  position: relative;
-  width: 25vw;
-  height: 25vw;
-  min-width: 150px;
-  min-height: 150px;
-  max-width: 350px;
-  max-height: 350px;
-  margin-bottom: 0.5rem;
-  z-index: 1;
-}
-
-.sobre-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width: 600px) {
-  #cover {
-    padding: 0.5rem;
-    justify-content: center;
+@media (max-height: 700px), (max-width: 400px) {
+  body {
+    padding: 1rem;
   }
-
-  .names-box .name {
-    font-size: clamp(32px, 12vw, 64px);
+  .countdown-timer {
+    font-size: clamp(24px, 5vw, 48px) !important;
   }
-
-  .names-box .ampersand {
-    font-size: clamp(24px, 10vw, 50px);
+  .font-[Dancing\ Script] {
+    font-size: clamp(14px, 6vw, 20px) !important;
   }
-
-  .invite-text {
-    font-size: clamp(15px, 5vw, 20px);
-    margin: 0.5rem 0;
-    max-width: 90%;
+  .nombres {
+    font-size: clamp(24px, 8vw, 64px) !important;
   }
-
-  .envelope-container {
-    width: 60vw;
-    height: 60vw;
-    min-width: 150px;
-    min-height: 150px;
-    max-width: 300px;
-    max-height: 300px;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+  a img {
+    width: 10vw !important;
+    max-width: 100px !important;
   }
 }
